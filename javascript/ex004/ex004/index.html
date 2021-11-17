@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio Ltpw</title>
+    <style>
+        body {
+            background-image: url(imagens/wallpaper.jpg);
+            background-repeat: no-repeat;
+            background-position:top center ;
+            background-size: cover;
+            background-attachment: fixed;
+            text-align: center;
+            font-size: 30px;
+            
+        }
+        main{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Controle salarial de funcionários</h1>
+        <button onclick="Calculo()">controlar salario</button>
+        <p id="resultado">O resultado vai aparecer aqui.</p>
+    </main>
+    <script>
+        let resultado = document.getElementById("resultado")
+        function Calculo() {
+            let nome = window.prompt("Qual e o nome do funcionário?")
+            let salario = Number(window.prompt("Qual é o salario do funcionário?"))
+            let porc = Number(window.prompt("Qual sera o reajuste salarial"))
+            let porcen = (salario * porc) / 100
+            let sale = (salario + porcen)
+
+            resultado.innerHTML = `O funcionario ${nome} ganhava R$${(salario).toFixed(2)} por mês. Agora, com um reajuste de ${porc}%, ele pássara a ganhar RS$${(porcen).toFixed(2)} a mais a terá um novo salario R$${(sale).toFixed(2)}`
+        }
+</script>
+</body>
+</html>
